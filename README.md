@@ -25,7 +25,7 @@ This repository contains infomation and tests meant to streamline the validation
 
 1. Add the folder named `/.github/workflows` to the Looker repo to be tested. This tells GitHub you have a workflow to run.
 
-2. Upload `marketplace_automation.yml` from this repo to `/.github/workflows` folder of the target Looker repo to be tested.
+2. Upload `marketplace_automation.yml` from this repo to `/.github/workflows` folder of the target Looker repo to be tested. The workflow yml will contain a reference to this action (please verify the latest version)
 
 3. Commit and PR to GitHub.
 
