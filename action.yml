@@ -1,5 +1,5 @@
-name: 'Calvin JS Action Test'
-description: 'Calvin JS Action Test'
+name: 'Looker Marketplace JSON Tests'
+description: 'Tests to verify Looker Marketplace Project assets'
 runs:
   using: 'node16'
   main: 'dist/index.js'
