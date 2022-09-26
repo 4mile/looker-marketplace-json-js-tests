@@ -26,12 +26,20 @@ let schema = {
 describe('Marketplace Automation Tests', ()=> {
 
     test('License File Exists', ()=> {
-        const fileExists = fs.existsSync(`${cwd}/main/LICENSE`);
-        expect(fileExists).toBe(true);
+        const files = fs.readdirSync(`${cwd}/main`)
+        const fileExists = files.filter( item => {
+            const itemCaps = item.toLowerCase()
+            return itemCaps === 'license'
+          })
+        expect(fileExists.length).toBe(1);
     })
     test('README File Exists', ()=> {
-        const fileExists = fs.existsSync(`${cwd}/main/README.md`);
-        expect(fileExists).toBe(true);
+        const files = fs.readdirSync(`${cwd}/main`)
+        const fileExists = files.filter( item => {
+            const itemCaps = item.toLowerCase()
+            return itemCaps === 'readme.md'
+          })
+        expect(fileExists.length).toBe(1);
     })
     test('Marketplace JSON Exists', ()=> {
         const fileExists = fs.existsSync(`${cwd}/main/marketplace.json`);
@@ -145,13 +153,27 @@ describe('Verify File Extensions: ', ()=> {
     const rootFiles = fs.readdirSync(`${cwd}/main`);
     const viewsFolderExists = fs.existsSync(`${cwd}/main/views`)
     const exploresFolderExists = fs.existsSync(`${cwd}/main/explores`)
+    const modelsFolderExists = fs.existsSync(`${cwd}/main/models`)
 
-    test('Model file exists and has extension .lkml', ()=> {
-        modelFile = rootFiles.filter( item => {
-            return item.includes('model.lkml')
+
+    if (modelsFolderExists) {
+        test('Model file exists and has extension .lkml', ()=> {
+            const modelFiles = fs.readdirSync(`${cwd}/main/models`)
+            modelFile = modelFiles.filter( item => {
+                return item.includes('model.lkml')
+            })
+            expect(modelFile[0]).not.toBe(undefined)
+        }) 
+    } else {
+        test('Model file exists and has extension .lkml', ()=> {
+            modelFile = rootFiles.filter( item => {
+                return item.includes('model.lkml')
+            })
+            expect(modelFile[0]).not.toBe(undefined)
         })
-        expect(modelFile[0]).not.toBe(undefined)
-    })
+    }
+
+
     test('Views folder exists', ()=> {
         expect(viewsFolderExists).toBe(true)
     })
