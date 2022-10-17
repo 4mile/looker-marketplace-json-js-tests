@@ -1,4 +1,4 @@
-# Looker Marketplace Test Automation Action
+# Looker Marketplace Validation Action
 
 This Action streamlines the validation of Looker Marketplace projects submitted by third party developers of Custom Visualiztions, Blocks and other Looker custom projects by validating Looker specific files.
 
