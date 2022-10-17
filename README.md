@@ -1,6 +1,6 @@
-# Marketplace Automation Test Repo
+# Looker Marketplace Test Automation Action
 
-This repository contains infomation and tests meant to streamline the validation of Looker Marketplace projects submitted by third party developers of Custom Visualiztions, Blocks and other Looker custom projects. This testing repo validates Looker specific files.
+This Action streamlines the validation of Looker Marketplace projects submitted by third party developers of Custom Visualiztions, Blocks and other Looker custom projects by validating Looker specific files.
 
 ## Tools
 
